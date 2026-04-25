@@ -1,7 +1,7 @@
 ---
 title: Home
 hero:
-  intro: "Hello, my name is"
+  intro: "Hello, my name is "
   title: "Phan Duc Thang"
   subtitle: "FCJ Cloud Intern"
   content: "I am currently interning at Amazon Web Services Vietnam, focusing on cloud technologies and practical information security applications."
