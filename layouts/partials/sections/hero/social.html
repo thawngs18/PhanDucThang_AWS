@@ -1,0 +1,26 @@
+{{- $hero := .Site.Params.hero | default dict -}}
+{{- $hero = merge $hero (.Site.Language.Params.hero | default dict) -}}
+{{- $hero = merge $hero (.Params.hero | default dict) -}}
+<span>
+    {{ range $hero.socialLinks.fontAwesomeIcons }}
+    <span class="px-1">
+        <a href="{{ .url }}"
+            {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
+            class="btn social-icon"
+        >
+            <i class="{{ .icon }}"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ range $hero.socialLinks.customIcons }}
+    <span class="px-1">
+        <a href="{{ .url }}"
+            {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
+            class="btn social-icon"
+        >
+            <img src="{{ .icon }}">
+        </a>
+    </span>
+    {{ end }}
+</span>

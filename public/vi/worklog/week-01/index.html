@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href="/images/pdt.png" type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/vi/worklog/week-01/">
+  <meta property="og:site_name" content="Báo cáo thực tập">
+  <meta property="og:title" content="Tuần 1 - Làm quen với AWS và các dịch vụ AWS cơ bản">
+  <meta property="og:description" content="Mục tiêu Tìm hiểu quy định, văn hóa doanh nghiệp, hoàn tất thủ tục với giảng viên hướng dẫn và thiết lập quy trình làm việc chung với nhóm FCJ. Nắm bắt các chính sách của AWS Free Tier 2025, nhận diện các dịch vụ dễ phát sinh chi phí và xây dựng phương án kiểm soát ngân sách an toàn. Xây dựng hệ thống quản lý định danh (IAM) bảo mật cao, áp dụng nguyên tắc “Quyền tối thiểu” (Least Privilege) và hạn chế sử dụng tài khoản Root. Nắm vững kiến thức nền tảng về kiến trúc mạng đám mây (VPC, Subnet, IGW, NAT Gateway) và các lớp bảo mật mạng (Security Group, Network ACLs). Thực hành xây dựng hạ tầng mạng ảo (VPC) độc lập và triển khai máy chủ EC2 trên AWS. Công việc đã thực hiện Ngày 17/04/2026 Gặp gỡ, làm quen và tạo mối quan hệ với các thành viên trong đơn vị. Đọc kỹ các quy định, văn hóa doanh nghiệp và nội quy làm việc tại đơn vị thực tập. Tài liệu tham khảo: https://rules.fcjuni.com/1-regulations/ Ngày 20/04/2026 Liên hệ và chính thức xác nhận thông tin thực tập với GVHD. Chủ động kết nối, lập nhóm và phân chia vai trò với các thành viên FCJ. Thống nhất kênh liên lạc và công cụ quản lý công việc. Ngày 21/04/2026 Đọc tài liệu cập nhật về AWS Free Tier 2025. Lên danh sách và ghi chú các dịch vụ có nguy cơ phát sinh chi phí cao để phòng tránh. Đăng ký tài khoản AWS và hoàn tất 5 task cơ bản để nhận $200 Credit. Thiết lập hệ thống cảnh báo chi phí để kiểm soát ngân sách an toàn. Tài liệu tham khảo: https://000001.awsstudygroup.com/ Ngày 22/04/2026 Thiết lập bộ ba User, Group và Role. Sử dụng Policy để định nghĩa hành động được phép hoặc bị cấm dựa trên nguyên tắc “Quyền tối thiểu”. Không dùng tài khoản Root cho việc hằng ngày và bắt buộc kích hoạt xác thực đa yếu tố cho tài khoản Admin. Triển khai Switch Role để OperatorUser chuyển sang Admin tạm thời khi cần xử lý hệ thống. Khởi tạo thành công AdminGroup, AdminUser, OperatorUser và gán AllowSwitchAdminPolicy để hoàn tất lab. Tài liệu tham khảo: https://000002.awsstudygroup.com/ Ngày 23/04/2026 Tìm hiểu về Subnets, Route Table, Internet Gateway và NAT Gateway. Tìm hiểu cách hoạt động của Security Group, Network ACLs và công cụ VPC Resource Map. Tài liệu tham khảo: https://000003.awsstudygroup.com/ Ngày 24/04/2026 Đã tạo VPC, Subnet, Internet Gateway, Route Table, Security Group và bật giám sát VPC Flow Logs. Triển khai EC2: Khởi tạo máy chủ và kiểm tra kết nối thành công từ VSCode vào máy chủ. Tài liệu tham khảo: https://000003.awsstudygroup.com/ Các lab đã thực hiện Lab 001 - AWS Free Tier Kích hoạt tài khoản AWS, hoàn tất 5 task để nhận credit, cấu hình AWS Budgets cảnh báo chi phí và thu hồi tài nguyên sau thực hành.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="worklog">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tuần 1 - Làm quen với AWS và các dịch vụ AWS cơ bản">
+  <meta name="twitter:description" content="Mục tiêu Tìm hiểu quy định, văn hóa doanh nghiệp, hoàn tất thủ tục với giảng viên hướng dẫn và thiết lập quy trình làm việc chung với nhóm FCJ. Nắm bắt các chính sách của AWS Free Tier 2025, nhận diện các dịch vụ dễ phát sinh chi phí và xây dựng phương án kiểm soát ngân sách an toàn. Xây dựng hệ thống quản lý định danh (IAM) bảo mật cao, áp dụng nguyên tắc “Quyền tối thiểu” (Least Privilege) và hạn chế sử dụng tài khoản Root. Nắm vững kiến thức nền tảng về kiến trúc mạng đám mây (VPC, Subnet, IGW, NAT Gateway) và các lớp bảo mật mạng (Security Group, Network ACLs). Thực hành xây dựng hạ tầng mạng ảo (VPC) độc lập và triển khai máy chủ EC2 trên AWS. Công việc đã thực hiện Ngày 17/04/2026 Gặp gỡ, làm quen và tạo mối quan hệ với các thành viên trong đơn vị. Đọc kỹ các quy định, văn hóa doanh nghiệp và nội quy làm việc tại đơn vị thực tập. Tài liệu tham khảo: https://rules.fcjuni.com/1-regulations/ Ngày 20/04/2026 Liên hệ và chính thức xác nhận thông tin thực tập với GVHD. Chủ động kết nối, lập nhóm và phân chia vai trò với các thành viên FCJ. Thống nhất kênh liên lạc và công cụ quản lý công việc. Ngày 21/04/2026 Đọc tài liệu cập nhật về AWS Free Tier 2025. Lên danh sách và ghi chú các dịch vụ có nguy cơ phát sinh chi phí cao để phòng tránh. Đăng ký tài khoản AWS và hoàn tất 5 task cơ bản để nhận $200 Credit. Thiết lập hệ thống cảnh báo chi phí để kiểm soát ngân sách an toàn. Tài liệu tham khảo: https://000001.awsstudygroup.com/ Ngày 22/04/2026 Thiết lập bộ ba User, Group và Role. Sử dụng Policy để định nghĩa hành động được phép hoặc bị cấm dựa trên nguyên tắc “Quyền tối thiểu”. Không dùng tài khoản Root cho việc hằng ngày và bắt buộc kích hoạt xác thực đa yếu tố cho tài khoản Admin. Triển khai Switch Role để OperatorUser chuyển sang Admin tạm thời khi cần xử lý hệ thống. Khởi tạo thành công AdminGroup, AdminUser, OperatorUser và gán AllowSwitchAdminPolicy để hoàn tất lab. Tài liệu tham khảo: https://000002.awsstudygroup.com/ Ngày 23/04/2026 Tìm hiểu về Subnets, Route Table, Internet Gateway và NAT Gateway. Tìm hiểu cách hoạt động của Security Group, Network ACLs và công cụ VPC Resource Map. Tài liệu tham khảo: https://000003.awsstudygroup.com/ Ngày 24/04/2026 Đã tạo VPC, Subnet, Internet Gateway, Route Table, Security Group và bật giám sát VPC Flow Logs. Triển khai EC2: Khởi tạo máy chủ và kiểm tra kết nối thành công từ VSCode vào máy chủ. Tài liệu tham khảo: https://000003.awsstudygroup.com/ Các lab đã thực hiện Lab 001 - AWS Free Tier Kích hoạt tài khoản AWS, hoàn tất 5 task để nhận credit, cấu hình AWS Budgets cảnh báo chi phí và thu hồi tài nguyên sau thực hành.">
+
+
+
+
+  
+    <link rel="alternate" hreflang="en" href="http://localhost:1313/worklog/week-01/" title="English">
+  
+    <link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/worklog/week-01/" title="Tiếng Việt">
+  
+  
+  <meta property="og:locale" content="vi">
+  
+    <meta property="og:locale:alternate" content="en">
+  
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/language-switcher.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Tuần 1 - Làm quen với AWS và các dịch vụ AWS cơ bản | Báo cáo thực tập
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/vi/">
+                
+                <img src="/images/pdt.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Báo cáo thực tập
+                
+            </a>
+
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/#about" aria-label="about">
+                            Thông tin sinh viên
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/worklog" title="Worklog">
+                            
+                            Worklog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/proposal" title="Proposal">
+                            
+                            Proposal
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/translated-blogs" title="Blog đã dịch">
+                            
+                            Blog đã dịch
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/events-participated" title="Sự kiện đã tham gia">
+                            
+                            Sự kiện đã tham gia
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/workshop" title="Workshop">
+                            
+                            Workshop
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/self-evaluation" title="Tự đánh giá">
+                            
+                            Tự đánh giá
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/vi/sharing-and-feedback" title="Chia sẻ và góp ý">
+                            
+                            Chia sẻ và góp ý
+                        </a>
+                    </li>
+                    
+                    
+<li class="nav-item navbar-text dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            🌐
+            <span class="d-none d-md-inline">Tiếng Việt</span>
+        
+    </a>
+    <div class="dropdown-menu shadow-lg rounded" aria-labelledby="languageDropdown"><a class="dropdown-item text-center nav-link" 
+               href="/worklog/week-01/" 
+               title="English">
+                English
+            </a><a class="dropdown-item text-center nav-link active" 
+               href="/vi/worklog/week-01/" 
+               title="Tiếng Việt">
+                Tiếng Việt
+            </a></div>
+</li>
+
+
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Tuần 1 - Làm quen với AWS và các dịch vụ AWS cơ bản</h1>
+            <div class="text-center">
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="mục-tiêu">Mục tiêu</h2>
+<ul>
+<li>Tìm hiểu quy định, văn hóa doanh nghiệp, hoàn tất thủ tục với giảng viên hướng dẫn và thiết lập quy trình làm việc chung với nhóm FCJ.</li>
+<li>Nắm bắt các chính sách của AWS Free Tier 2025, nhận diện các dịch vụ dễ phát sinh chi phí và xây dựng phương án kiểm soát ngân sách an toàn.</li>
+<li>Xây dựng hệ thống quản lý định danh (IAM) bảo mật cao, áp dụng nguyên tắc &ldquo;Quyền tối thiểu&rdquo; (Least Privilege) và hạn chế sử dụng tài khoản Root.</li>
+<li>Nắm vững kiến thức nền tảng về kiến trúc mạng đám mây (VPC, Subnet, IGW, NAT Gateway) và các lớp bảo mật mạng (Security Group, Network ACLs).</li>
+<li>Thực hành xây dựng hạ tầng mạng ảo (VPC) độc lập và triển khai máy chủ EC2 trên AWS.</li>
+</ul>
+<h2 id="công-việc-đã-thực-hiện">Công việc đã thực hiện</h2>
+<h3 id="ngày-17042026">Ngày 17/04/2026</h3>
+<ul>
+<li>Gặp gỡ, làm quen và tạo mối quan hệ với các thành viên trong đơn vị.</li>
+<li>Đọc kỹ các quy định, văn hóa doanh nghiệp và nội quy làm việc tại đơn vị thực tập.</li>
+<li>Tài liệu tham khảo: <a href="https://rules.fcjuni.com/1-regulations/">https://rules.fcjuni.com/1-regulations/</a></li>
+</ul>
+<h3 id="ngày-20042026">Ngày 20/04/2026</h3>
+<ul>
+<li>Liên hệ và chính thức xác nhận thông tin thực tập với GVHD.</li>
+<li>Chủ động kết nối, lập nhóm và phân chia vai trò với các thành viên FCJ.</li>
+<li>Thống nhất kênh liên lạc và công cụ quản lý công việc.</li>
+</ul>
+<h3 id="ngày-21042026">Ngày 21/04/2026</h3>
+<ul>
+<li>Đọc tài liệu cập nhật về AWS Free Tier 2025.</li>
+<li>Lên danh sách và ghi chú các dịch vụ có nguy cơ phát sinh chi phí cao để phòng tránh.</li>
+<li>Đăng ký tài khoản AWS và hoàn tất 5 task cơ bản để nhận $200 Credit.</li>
+<li>Thiết lập hệ thống cảnh báo chi phí để kiểm soát ngân sách an toàn.</li>
+<li>Tài liệu tham khảo: <a href="https://000001.awsstudygroup.com/">https://000001.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="ngày-22042026">Ngày 22/04/2026</h3>
+<ul>
+<li>Thiết lập bộ ba User, Group và Role.</li>
+<li>Sử dụng Policy để định nghĩa hành động được phép hoặc bị cấm dựa trên nguyên tắc &ldquo;Quyền tối thiểu&rdquo;.</li>
+<li>Không dùng tài khoản Root cho việc hằng ngày và bắt buộc kích hoạt xác thực đa yếu tố cho tài khoản Admin.</li>
+<li>Triển khai Switch Role để OperatorUser chuyển sang Admin tạm thời khi cần xử lý hệ thống.</li>
+<li>Khởi tạo thành công AdminGroup, AdminUser, OperatorUser và gán AllowSwitchAdminPolicy để hoàn tất lab.</li>
+<li>Tài liệu tham khảo: <a href="https://000002.awsstudygroup.com/">https://000002.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="ngày-23042026">Ngày 23/04/2026</h3>
+<ul>
+<li>Tìm hiểu về Subnets, Route Table, Internet Gateway và NAT Gateway.</li>
+<li>Tìm hiểu cách hoạt động của Security Group, Network ACLs và công cụ VPC Resource Map.</li>
+<li>Tài liệu tham khảo: <a href="https://000003.awsstudygroup.com/">https://000003.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="ngày-24042026">Ngày 24/04/2026</h3>
+<ul>
+<li>Đã tạo VPC, Subnet, Internet Gateway, Route Table, Security Group và bật giám sát VPC Flow Logs.</li>
+<li>Triển khai EC2: Khởi tạo máy chủ và kiểm tra kết nối thành công từ VSCode vào máy chủ.</li>
+<li>Tài liệu tham khảo: <a href="https://000003.awsstudygroup.com/">https://000003.awsstudygroup.com/</a></li>
+</ul>
+<h2 id="các-lab-đã-thực-hiện">Các lab đã thực hiện</h2>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 001 - AWS Free Tier</h5>
+        <p class="card-text">Kích hoạt tài khoản AWS, hoàn tất 5 task để nhận credit, cấu hình AWS Budgets cảnh báo chi phí và thu hồi tài nguyên sau thực hành.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 002 - AWS IAM</h5>
+        <p class="card-text">Tạo User/Group/Role, áp dụng Policy theo nguyên tắc Quyền tối thiểu, bật MFA, kiểm tra Switch Role và xác nhận cơ chế Deny &gt; Allow.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 003 - Amazon VPC</h5>
+        <p class="card-text">Xây dựng VPC với Public/Private Subnet, cấu hình IGW/NAT Gateway, Route Table, Security Group, Network ACL và xác thực kết nối EC2 thành công.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 id="kết-quả">Kết quả</h2>
+<ul>
+<li>Đã xác nhận xong thông tin thực tập, hoàn thiện cơ cấu nhóm FCJ, phân chia rõ vai trò và thống nhất công cụ quản lý, liên lạc.</li>
+<li>Đăng ký thành công tài khoản AWS, hoàn tất 5 task cơ bản để nhận $200 Credit và thiết lập Billing Alarm.</li>
+<li>Khởi tạo thành công IAM (AdminGroup, AdminUser, OperatorUser), bật MFA cho Admin và cấu hình Switch Role (AllowSwitchAdminPolicy).</li>
+<li>Triển khai hạ tầng mạng gồm VPC, Subnet, Internet Gateway, Route Table, Security Group và kích hoạt VPC Flow Logs.</li>
+<li>Khởi tạo thành công máy chủ EC2 và kiểm tra kết nối thành công từ VSCode.</li>
+</ul>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mục-tiêu">Mục tiêu</a></li>
+    <li><a href="#công-việc-đã-thực-hiện">Công việc đã thực hiện</a>
+      <ul>
+        <li><a href="#ngày-17042026">Ngày 17/04/2026</a></li>
+        <li><a href="#ngày-20042026">Ngày 20/04/2026</a></li>
+        <li><a href="#ngày-21042026">Ngày 21/04/2026</a></li>
+        <li><a href="#ngày-22042026">Ngày 22/04/2026</a></li>
+        <li><a href="#ngày-23042026">Ngày 23/04/2026</a></li>
+        <li><a href="#ngày-24042026">Ngày 24/04/2026</a></li>
+      </ul>
+    </li>
+    <li><a href="#các-lab-đã-thực-hiện">Các lab đã thực hiện</a></li>
+    <li><a href="#kết-quả">Kết quả</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+  </div><footer>
+    
+
+
+ 
+
+<div class="text-center pt-2">
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

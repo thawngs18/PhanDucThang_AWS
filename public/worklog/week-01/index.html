@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href="/images/pdt.png" type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/worklog/week-01/">
+  <meta property="og:site_name" content="Internship Report">
+  <meta property="og:title" content="Week 1 - Getting familiar with AWS and basic AWS services">
+  <meta property="og:description" content="Objective Learn company regulations and culture, complete internship procedures with the supervisor, and establish a shared workflow with the FCJ team. Understand AWS Free Tier 2025 policies, identify high-cost-risk services, and build a safe budget control plan. Build a secure IAM system, apply the Least Privilege principle, and minimize Root account usage. Master cloud networking fundamentals (VPC, Subnet, IGW, NAT Gateway) and network security layers (Security Group, Network ACLs). Practice building an independent virtual network (VPC) and deploying an EC2 server on AWS. Tasks Completed Date 17/04/2026 Meet, get acquainted, and build relationships with team members. Review company regulations, culture, and internship workplace rules in detail. Reference: https://rules.fcjuni.com/1-regulations/ Date 20/04/2026 Contact and officially confirm internship information with the academic supervisor. Proactively connect, form the team, and assign roles with FCJ members. Standardize communication channels and task management tools. Date 21/04/2026 Study updated AWS Free Tier 2025 documentation. List and note services with high cost-overrun risk to avoid unexpected charges. Register an AWS account and complete five basic tasks to receive $200 credits. Configure billing alerts for safe budget control. Reference: https://000001.awsstudygroup.com/ Date 22/04/2026 Set up the IAM trio: User, Group, and Role. Use policies to define allowed and denied actions based on the Least Privilege principle. Avoid daily Root account usage and enforce MFA for the Admin account. Implement Switch Role so OperatorUser can temporarily assume Admin privileges when required. Successfully create AdminGroup, AdminUser, OperatorUser, and assign AllowSwitchAdminPolicy to complete the lab. Reference: https://000002.awsstudygroup.com/ Date 23/04/2026 Learn about Subnets, Route Tables, Internet Gateway, and NAT Gateway. Understand how Security Groups, Network ACLs, and VPC Resource Map work. Reference: https://000003.awsstudygroup.com/ Date 24/04/2026 Created VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs monitoring. Deployed EC2: Created the server and verified successful VSCode-to-server connection. Reference: https://000003.awsstudygroup.com/ Labs completed Lab 001 - AWS Free Tier Activated the AWS account, completed five starter tasks for credits, configured AWS Budgets alerts, and terminated resources after practice.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="worklog">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Week 1 - Getting familiar with AWS and basic AWS services">
+  <meta name="twitter:description" content="Objective Learn company regulations and culture, complete internship procedures with the supervisor, and establish a shared workflow with the FCJ team. Understand AWS Free Tier 2025 policies, identify high-cost-risk services, and build a safe budget control plan. Build a secure IAM system, apply the Least Privilege principle, and minimize Root account usage. Master cloud networking fundamentals (VPC, Subnet, IGW, NAT Gateway) and network security layers (Security Group, Network ACLs). Practice building an independent virtual network (VPC) and deploying an EC2 server on AWS. Tasks Completed Date 17/04/2026 Meet, get acquainted, and build relationships with team members. Review company regulations, culture, and internship workplace rules in detail. Reference: https://rules.fcjuni.com/1-regulations/ Date 20/04/2026 Contact and officially confirm internship information with the academic supervisor. Proactively connect, form the team, and assign roles with FCJ members. Standardize communication channels and task management tools. Date 21/04/2026 Study updated AWS Free Tier 2025 documentation. List and note services with high cost-overrun risk to avoid unexpected charges. Register an AWS account and complete five basic tasks to receive $200 credits. Configure billing alerts for safe budget control. Reference: https://000001.awsstudygroup.com/ Date 22/04/2026 Set up the IAM trio: User, Group, and Role. Use policies to define allowed and denied actions based on the Least Privilege principle. Avoid daily Root account usage and enforce MFA for the Admin account. Implement Switch Role so OperatorUser can temporarily assume Admin privileges when required. Successfully create AdminGroup, AdminUser, OperatorUser, and assign AllowSwitchAdminPolicy to complete the lab. Reference: https://000002.awsstudygroup.com/ Date 23/04/2026 Learn about Subnets, Route Tables, Internet Gateway, and NAT Gateway. Understand how Security Groups, Network ACLs, and VPC Resource Map work. Reference: https://000003.awsstudygroup.com/ Date 24/04/2026 Created VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs monitoring. Deployed EC2: Created the server and verified successful VSCode-to-server connection. Reference: https://000003.awsstudygroup.com/ Labs completed Lab 001 - AWS Free Tier Activated the AWS account, completed five starter tasks for credits, configured AWS Budgets alerts, and terminated resources after practice.">
+
+
+
+
+  
+    <link rel="alternate" hreflang="en" href="http://localhost:1313/worklog/week-01/" title="English">
+  
+    <link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/worklog/week-01/" title="Tiếng Việt">
+  
+  
+  <meta property="og:locale" content="en">
+  
+    <meta property="og:locale:alternate" content="vi">
+  
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/language-switcher.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Week 1 - Getting familiar with AWS and basic AWS services | Internship Report
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/images/pdt.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Internship Report
+                
+            </a>
+
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            Student Information
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/worklog" title="Worklog">
+                            
+                            Worklog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/proposal" title="Proposal">
+                            
+                            Proposal
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/translated-blogs" title="Translated Blogs">
+                            
+                            Translated Blogs
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/events-participated" title="Events Participated">
+                            
+                            Events Participated
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/workshop" title="Workshop">
+                            
+                            Workshop
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/self-evaluation" title="Self-evaluation">
+                            
+                            Self-evaluation
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/sharing-and-feedback" title="Sharing and Feedback">
+                            
+                            Sharing and Feedback
+                        </a>
+                    </li>
+                    
+                    
+<li class="nav-item navbar-text dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            🌐
+            <span class="d-none d-md-inline">English</span>
+        
+    </a>
+    <div class="dropdown-menu shadow-lg rounded" aria-labelledby="languageDropdown"><a class="dropdown-item text-center nav-link active" 
+               href="/worklog/week-01/" 
+               title="English">
+                English
+            </a><a class="dropdown-item text-center nav-link" 
+               href="/vi/worklog/week-01/" 
+               title="Tiếng Việt">
+                Tiếng Việt
+            </a></div>
+</li>
+
+
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Week 1 - Getting familiar with AWS and basic AWS services</h1>
+            <div class="text-center">
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="objective">Objective</h2>
+<ul>
+<li>Learn company regulations and culture, complete internship procedures with the supervisor, and establish a shared workflow with the FCJ team.</li>
+<li>Understand AWS Free Tier 2025 policies, identify high-cost-risk services, and build a safe budget control plan.</li>
+<li>Build a secure IAM system, apply the Least Privilege principle, and minimize Root account usage.</li>
+<li>Master cloud networking fundamentals (VPC, Subnet, IGW, NAT Gateway) and network security layers (Security Group, Network ACLs).</li>
+<li>Practice building an independent virtual network (VPC) and deploying an EC2 server on AWS.</li>
+</ul>
+<h2 id="tasks-completed">Tasks Completed</h2>
+<h3 id="date-17042026">Date 17/04/2026</h3>
+<ul>
+<li>Meet, get acquainted, and build relationships with team members.</li>
+<li>Review company regulations, culture, and internship workplace rules in detail.</li>
+<li>Reference: <a href="https://rules.fcjuni.com/1-regulations/">https://rules.fcjuni.com/1-regulations/</a></li>
+</ul>
+<h3 id="date-20042026">Date 20/04/2026</h3>
+<ul>
+<li>Contact and officially confirm internship information with the academic supervisor.</li>
+<li>Proactively connect, form the team, and assign roles with FCJ members.</li>
+<li>Standardize communication channels and task management tools.</li>
+</ul>
+<h3 id="date-21042026">Date 21/04/2026</h3>
+<ul>
+<li>Study updated AWS Free Tier 2025 documentation.</li>
+<li>List and note services with high cost-overrun risk to avoid unexpected charges.</li>
+<li>Register an AWS account and complete five basic tasks to receive $200 credits.</li>
+<li>Configure billing alerts for safe budget control.</li>
+<li>Reference: <a href="https://000001.awsstudygroup.com/">https://000001.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="date-22042026">Date 22/04/2026</h3>
+<ul>
+<li>Set up the IAM trio: User, Group, and Role.</li>
+<li>Use policies to define allowed and denied actions based on the Least Privilege principle.</li>
+<li>Avoid daily Root account usage and enforce MFA for the Admin account.</li>
+<li>Implement Switch Role so OperatorUser can temporarily assume Admin privileges when required.</li>
+<li>Successfully create AdminGroup, AdminUser, OperatorUser, and assign AllowSwitchAdminPolicy to complete the lab.</li>
+<li>Reference: <a href="https://000002.awsstudygroup.com/">https://000002.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="date-23042026">Date 23/04/2026</h3>
+<ul>
+<li>Learn about Subnets, Route Tables, Internet Gateway, and NAT Gateway.</li>
+<li>Understand how Security Groups, Network ACLs, and VPC Resource Map work.</li>
+<li>Reference: <a href="https://000003.awsstudygroup.com/">https://000003.awsstudygroup.com/</a></li>
+</ul>
+<h3 id="date-24042026">Date 24/04/2026</h3>
+<ul>
+<li>Created VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs monitoring.</li>
+<li>Deployed EC2: Created the server and verified successful VSCode-to-server connection.</li>
+<li>Reference: <a href="https://000003.awsstudygroup.com/">https://000003.awsstudygroup.com/</a></li>
+</ul>
+<h2 id="labs-completed">Labs completed</h2>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 001 - AWS Free Tier</h5>
+        <p class="card-text">Activated the AWS account, completed five starter tasks for credits, configured AWS Budgets alerts, and terminated resources after practice.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 002 - AWS IAM</h5>
+        <p class="card-text">Created User/Group/Role, applied least-privilege policies, enabled MFA, validated Switch Role, and confirmed the Deny &gt; Allow rule.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Lab 003 - Amazon VPC</h5>
+        <p class="card-text">Built a VPC with public/private subnets, configured IGW/NAT Gateway, route tables, security group, network ACL, and verified EC2 connectivity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 id="outcome">Outcome</h2>
+<ul>
+<li>Internship information was confirmed, FCJ team structure was completed, roles were clarified, and communication/management tools were aligned.</li>
+<li>Successfully registered AWS account, completed five starter tasks for $200 credits, and configured billing alarms.</li>
+<li>Successfully configured IAM entities (AdminGroup, AdminUser, OperatorUser), enabled MFA for Admin, and set up Switch Role (AllowSwitchAdminPolicy).</li>
+<li>Deployed network infrastructure including VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs.</li>
+<li>Successfully launched an EC2 server and validated connection from VSCode.</li>
+</ul>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#tasks-completed">Tasks Completed</a>
+      <ul>
+        <li><a href="#date-17042026">Date 17/04/2026</a></li>
+        <li><a href="#date-20042026">Date 20/04/2026</a></li>
+        <li><a href="#date-21042026">Date 21/04/2026</a></li>
+        <li><a href="#date-22042026">Date 22/04/2026</a></li>
+        <li><a href="#date-23042026">Date 23/04/2026</a></li>
+        <li><a href="#date-24042026">Date 24/04/2026</a></li>
+      </ul>
+    </li>
+    <li><a href="#labs-completed">Labs completed</a></li>
+    <li><a href="#outcome">Outcome</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+  </div><footer>
+    
+
+
+ 
+
+<div class="text-center pt-2">
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ (printf "%scss/list.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container pt-5" id="list-page">
+    <h2 class="text-center pb-2">{{ .Title }}</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+            <article class="secondary-font">
+                {{ .Content }}
+            </article>
+        </div>
+    </div>
+</div>
+{{ end }}
