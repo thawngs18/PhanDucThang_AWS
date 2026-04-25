@@ -2,7 +2,7 @@
 title: Trang chủ
 hero:
   intro: "Xin chào, tên tôi là"
-  title: "Phan Duc Thang"
+  title: "Phan Đức Thắng"
   subtitle: "FCJ Cloud Intern"
   content: "Hiện tôi đang thực tập tại Amazon Web Services Vietnam, tập trung vào công nghệ điện toán đám mây và các ứng dụng thực tiễn về an toàn thông tin."
   button:
@@ -10,7 +10,7 @@ hero:
 about:
   title: "Thông tin sinh viên"
   content: |-
-    Họ và tên: Phan Duc Thang
+    Họ và tên: Phan Đức Thắng
 
     Số điện thoại: 0906027752
 
