@@ -1,95 +1,145 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Worklog on Internship Report</title>
-    <link>http://localhost:1313/PhanDucThang_AWS/worklog/</link>
-    <description>Recent content in Worklog on Internship Report</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/PhanDucThang_AWS/worklog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Week 1 - Getting familiar with AWS and basic AWS services</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-01/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Learn company regulations and culture, complete internship procedures with the supervisor, and establish a shared workflow with the FCJ team.&lt;/li&gt;&#xA;&lt;li&gt;Understand AWS Free Tier 2025 policies, identify high-cost-risk services, and build a safe budget control plan.&lt;/li&gt;&#xA;&lt;li&gt;Build a secure IAM system, apply the Least Privilege principle, and minimize Root account usage.&lt;/li&gt;&#xA;&lt;li&gt;Master cloud networking fundamentals (VPC, Subnet, IGW, NAT Gateway) and network security layers (Security Group, Network ACLs).&lt;/li&gt;&#xA;&lt;li&gt;Practice building an independent virtual network (VPC) and deploying an EC2 server on AWS.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;h3 id=&#34;date-17042026&#34;&gt;Date 17/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Meet, get acquainted, and build relationships with team members.&lt;/li&gt;&#xA;&lt;li&gt;Review company regulations, culture, and internship workplace rules in detail.&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://rules.fcjuni.com/1-regulations/&#34;&gt;https://rules.fcjuni.com/1-regulations/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;date-20042026&#34;&gt;Date 20/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Contact and officially confirm internship information with the academic supervisor.&lt;/li&gt;&#xA;&lt;li&gt;Proactively connect, form the team, and assign roles with FCJ members.&lt;/li&gt;&#xA;&lt;li&gt;Standardize communication channels and task management tools.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;date-21042026&#34;&gt;Date 21/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Study updated AWS Free Tier 2025 documentation.&lt;/li&gt;&#xA;&lt;li&gt;List and note services with high cost-overrun risk to avoid unexpected charges.&lt;/li&gt;&#xA;&lt;li&gt;Register an AWS account and complete five basic tasks to receive $200 credits.&lt;/li&gt;&#xA;&lt;li&gt;Configure billing alerts for safe budget control.&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://000001.awsstudygroup.com/&#34;&gt;https://000001.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;date-22042026&#34;&gt;Date 22/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Set up the IAM trio: User, Group, and Role.&lt;/li&gt;&#xA;&lt;li&gt;Use policies to define allowed and denied actions based on the Least Privilege principle.&lt;/li&gt;&#xA;&lt;li&gt;Avoid daily Root account usage and enforce MFA for the Admin account.&lt;/li&gt;&#xA;&lt;li&gt;Implement Switch Role so OperatorUser can temporarily assume Admin privileges when required.&lt;/li&gt;&#xA;&lt;li&gt;Successfully create AdminGroup, AdminUser, OperatorUser, and assign AllowSwitchAdminPolicy to complete the lab.&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://000002.awsstudygroup.com/&#34;&gt;https://000002.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;date-23042026&#34;&gt;Date 23/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Learn about Subnets, Route Tables, Internet Gateway, and NAT Gateway.&lt;/li&gt;&#xA;&lt;li&gt;Understand how Security Groups, Network ACLs, and VPC Resource Map work.&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://000003.awsstudygroup.com/&#34;&gt;https://000003.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;date-24042026&#34;&gt;Date 24/04/2026&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Created VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs monitoring.&lt;/li&gt;&#xA;&lt;li&gt;Deployed EC2: Created the server and verified successful VSCode-to-server connection.&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://000003.awsstudygroup.com/&#34;&gt;https://000003.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;labs-completed&#34;&gt;Labs completed&lt;/h2&gt;&#xA;&lt;div class=&#34;row g-3&#34;&gt;&#xA;  &lt;div class=&#34;col-md-4&#34;&gt;&#xA;    &lt;div class=&#34;card h-100 shadow-sm&#34;&gt;&#xA;      &lt;div class=&#34;card-body&#34;&gt;&#xA;        &lt;h5 class=&#34;card-title&#34;&gt;Lab 001 - AWS Free Tier&lt;/h5&gt;&#xA;        &lt;p class=&#34;card-text&#34;&gt;Activated the AWS account, completed five starter tasks for credits, configured AWS Budgets alerts, and terminated resources after practice.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 2 - Doing task A</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-02/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 2.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 3 - Doing task B</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-03/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 3.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 4 - Doing task C</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-04/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 4.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 5 - Doing task D</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-05/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-05/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 5.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 6 - Doing task E</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-06/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-06/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 6.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 7 - Doing task G</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-07/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-07/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 7.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 8 - Doing task H</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-08/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-08/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 8.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 9 - Doing task I</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-09/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-09/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 9.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 10 - Doing task L</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-10/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-10/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 10.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 11 - Doing task M</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-11/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-11/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 11.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 12 - Doing task N</title>
-      <link>http://localhost:1313/PhanDucThang_AWS/worklog/week-12/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PhanDucThang_AWS/worklog/week-12/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Describe the goal for Week 12.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tasks-completed&#34;&gt;Tasks Completed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Task 1&lt;/li&gt;&#xA;&lt;li&gt;Task 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;outcome&#34;&gt;Outcome&lt;/h2&gt;&#xA;&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Worklog on Internship Report</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/</link><description>Recent content in Worklog on Internship Report</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://thawngs18.github.io/PhanDucThang_AWS/worklog/index.xml" rel="self" type="application/rss+xml"/><item><title>Week 1 - Getting familiar with AWS and basic AWS services</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-01/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-01/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn company regulations and culture, complete internship procedures with the supervisor, and establish a shared workflow with the FCJ team.&lt;/li&gt;
+&lt;li&gt;Understand AWS Free Tier 2025 policies, identify high-cost-risk services, and build a safe budget control plan.&lt;/li&gt;
+&lt;li&gt;Build a secure IAM system, apply the Least Privilege principle, and minimize Root account usage.&lt;/li&gt;
+&lt;li&gt;Master cloud networking fundamentals (VPC, Subnet, IGW, NAT Gateway) and network security layers (Security Group, Network ACLs).&lt;/li&gt;
+&lt;li&gt;Practice building an independent virtual network (VPC) and deploying an EC2 server on AWS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;h3 id="date-17042026"&gt;Date 17/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Meet, get acquainted, and build relationships with team members.&lt;/li&gt;
+&lt;li&gt;Review company regulations, culture, and internship workplace rules in detail.&lt;/li&gt;
+&lt;li&gt;Reference: &lt;a href="https://rules.fcjuni.com/1-regulations/"&gt;https://rules.fcjuni.com/1-regulations/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="date-20042026"&gt;Date 20/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Contact and officially confirm internship information with the academic supervisor.&lt;/li&gt;
+&lt;li&gt;Proactively connect, form the team, and assign roles with FCJ members.&lt;/li&gt;
+&lt;li&gt;Standardize communication channels and task management tools.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="date-21042026"&gt;Date 21/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Study updated AWS Free Tier 2025 documentation.&lt;/li&gt;
+&lt;li&gt;List and note services with high cost-overrun risk to avoid unexpected charges.&lt;/li&gt;
+&lt;li&gt;Register an AWS account and complete five basic tasks to receive $200 credits.&lt;/li&gt;
+&lt;li&gt;Configure billing alerts for safe budget control.&lt;/li&gt;
+&lt;li&gt;Reference: &lt;a href="https://000001.awsstudygroup.com/"&gt;https://000001.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="date-22042026"&gt;Date 22/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up the IAM trio: User, Group, and Role.&lt;/li&gt;
+&lt;li&gt;Use policies to define allowed and denied actions based on the Least Privilege principle.&lt;/li&gt;
+&lt;li&gt;Avoid daily Root account usage and enforce MFA for the Admin account.&lt;/li&gt;
+&lt;li&gt;Implement Switch Role so OperatorUser can temporarily assume Admin privileges when required.&lt;/li&gt;
+&lt;li&gt;Successfully create AdminGroup, AdminUser, OperatorUser, and assign AllowSwitchAdminPolicy to complete the lab.&lt;/li&gt;
+&lt;li&gt;Reference: &lt;a href="https://000002.awsstudygroup.com/"&gt;https://000002.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="date-23042026"&gt;Date 23/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about Subnets, Route Tables, Internet Gateway, and NAT Gateway.&lt;/li&gt;
+&lt;li&gt;Understand how Security Groups, Network ACLs, and VPC Resource Map work.&lt;/li&gt;
+&lt;li&gt;Reference: &lt;a href="https://000003.awsstudygroup.com/"&gt;https://000003.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="date-24042026"&gt;Date 24/04/2026&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Created VPC, Subnet, Internet Gateway, Route Table, Security Group, and enabled VPC Flow Logs monitoring.&lt;/li&gt;
+&lt;li&gt;Deployed EC2: Created the server and verified successful VSCode-to-server connection.&lt;/li&gt;
+&lt;li&gt;Reference: &lt;a href="https://000003.awsstudygroup.com/"&gt;https://000003.awsstudygroup.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="labs-completed"&gt;Labs completed&lt;/h2&gt;
+&lt;div class="row g-3"&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;div class="card h-100 shadow-sm"&gt;
+ &lt;div class="card-body"&gt;
+ &lt;h5 class="card-title"&gt;Lab 001 - AWS Free Tier&lt;/h5&gt;
+ &lt;p class="card-text"&gt;Activated the AWS account, completed five starter tasks for credits, configured AWS Budgets alerts, and terminated resources after practice.&lt;/p&gt;</description></item><item><title>Week 2 - Doing task A</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-02/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 2.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 3 - Doing task B</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-03/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-03/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 3.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 4 - Doing task C</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-04/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-04/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 4.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 5 - Doing task D</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-05/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-05/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 5.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 6 - Doing task E</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-06/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 6.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 7 - Doing task G</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-07/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 7.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 8 - Doing task H</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-08/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-08/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 8.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 9 - Doing task I</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-09/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-09/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 9.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 10 - Doing task L</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-10/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 10.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 11 - Doing task M</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-11/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 11.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item><item><title>Week 12 - Doing task N</title><link>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://thawngs18.github.io/PhanDucThang_AWS/worklog/week-12/</guid><description>&lt;h2 id="objective"&gt;Objective&lt;/h2&gt;
+&lt;p&gt;Describe the goal for Week 12.&lt;/p&gt;
+&lt;h2 id="tasks-completed"&gt;Tasks Completed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Task 1&lt;/li&gt;
+&lt;li&gt;Task 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="outcome"&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Write the result and what you learned this week.&lt;/p&gt;</description></item></channel></rss>
